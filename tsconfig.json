@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": false,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist/",
+    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "resolveJsonModule": true
+  },
+  "include": ["./src/**/*"]
+}

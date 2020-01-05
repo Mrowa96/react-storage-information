@@ -1,0 +1,16 @@
+{
+  "name": "react-storage-information-example",
+  "version": "1.0.0",
+  "author": "Paweł Mrowiec <work@pawel-mrowiec.pl>",
+  "license": "GPLv3",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-storage-information": "file:.."
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4"
+  }
+}

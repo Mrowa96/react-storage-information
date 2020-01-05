@@ -1,0 +1,8 @@
+# Directories
+node_modules
+coverage
+dist
+
+# Files
+.DS_Store
+npm-debug.log*
