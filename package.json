@@ -1,22 +1,26 @@
 {
   "name": "react-storage-information",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Library to retrive information about storage.",
   "author": "Paweł Mrowiec <work@pawel-mrowiec.pl>",
-  "main": "dist/library.js",
+  "main": "dist/react-storage-information.js",
   "license": "GPLv3",
   "scripts": {
-    "start": "cross-env NODE_ENV=production webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack",
+    "start": "webpack --watch",
+    "build": "webpack",
     "test": "jest --env=jsdom",
     "test:watch": "jest --env=jsdom --watch",
     "test:coverage": "jest --env=jsdom --coverage",
-    "analyze": "cross-env NODE_ENV=production ANALYZE_BUILD=1 webpack"
+    "analyze": "cross-env ANALYZE_BUILD=1 webpack",
+    "lint": "tslint -p ./tsconfig.json"
   },
-  "dependencies": {
-    "cross-env": "^6.0.3",
-    "jest": "^24.9.0",
-    "react": "16.12.0"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm lint && npm test"
+    }
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -26,6 +30,7 @@
     "@babel/runtime": "^7.7.7",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
+    "@testing-library/react-hooks": "^3.2.1",
     "@types/classnames": "^2.2.9",
     "@types/jest": "^24.0.25",
     "@types/react": "^16.9.17",
@@ -33,15 +38,16 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-prettier": "^3.1.2",
-    "file-loader": "^5.0.2",
+    "jest": "^24.9.0",
     "prettier": "1.19.1",
-    "raw-loader": "^4.0.0",
+    "react-test-renderer": "^16.12.0",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { toPercentage, toMegabytes, toReadable } from './helpers';
-import { UnitsType, OptionsType, ReturnType } from './typings';
+import { UnitsType, HookOptionsType, HookReturnType } from './typings';
 
 const defaultUnits: UnitsType = {
   gigabytes: 'GB',
@@ -8,17 +8,20 @@ const defaultUnits: UnitsType = {
   percentage: '%',
 };
 
-const defaultOptions: OptionsType = {
+const defaultOptions: HookOptionsType = {
   notSupportedMessage: 'Not supported.',
   units: defaultUnits,
 };
 
-function useStorageInformation({ notSupportedMessage, units }: OptionsType = defaultOptions): ReturnType {
+export default function useStorageInformation({
+  notSupportedMessage,
+  units,
+}: HookOptionsType = defaultOptions): HookReturnType {
   const [storageSpace, setStorageSpace] = useState<StorageEstimate | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    (async function calculateStorageSpace() {
+  useEffect(function effect(): void {
+    (async function calculateStorageSpace(): Promise<void> {
       try {
         if (!navigator?.storage?.estimate) {
           throw new Error(notSupportedMessage);
@@ -33,8 +36,8 @@ function useStorageInformation({ notSupportedMessage, units }: OptionsType = def
 
   if (error) {
     return {
-      error,
       ready: false,
+      error,
     };
   }
 
@@ -45,13 +48,13 @@ function useStorageInformation({ notSupportedMessage, units }: OptionsType = def
   }
 
   return {
+    ready: true,
     available: {
       megabytes: toMegabytes(storageSpace.quota - storageSpace.usage, units),
       percentage: toPercentage((storageSpace.quota - storageSpace.usage) / storageSpace.quota, units),
       raw: storageSpace.quota - storageSpace.usage,
       readable: toReadable(storageSpace.quota - storageSpace.usage, units),
     },
-    ready: true,
     total: {
       megabytes: toMegabytes(storageSpace.quota, units),
       percentage: toPercentage(100, units),
@@ -66,5 +69,3 @@ function useStorageInformation({ notSupportedMessage, units }: OptionsType = def
     },
   };
 }
-
-export default useStorageInformation;

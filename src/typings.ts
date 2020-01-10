@@ -4,12 +4,12 @@ export type UnitsType = {
   percentage: string;
 };
 
-export type OptionsType = {
+export type HookOptionsType = {
   notSupportedMessage: string;
   units: UnitsType;
 };
 
-export type ReturnType = {
+export type HookReturnType = {
   ready: boolean;
   error?: string;
   total?: {

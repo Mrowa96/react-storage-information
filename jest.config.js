@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/*.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/index.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   preset: 'ts-jest',
   testEnvironment: 'node',

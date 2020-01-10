@@ -4,18 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const ANALYZE_BUILD = process.env.ANALYZE_BUILD === '1';
 
-const babelLoader = {
-  loader: 'babel-loader',
-  options: { cacheDirectory: true, cacheCompression: true, compact: true },
-};
-
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'library.js',
-    library: 'library',
+    filename: 'react-storage-information.js',
+    library: 'react-storage-information',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -24,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)$/,
+        test: /\.(ts)$/,
         enforce: 'pre',
         loader: 'tslint-loader',
         include: path.resolve(__dirname, 'src'),
@@ -35,17 +30,15 @@ module.exports = {
             test: /\.(ts)$/,
             include: path.resolve(__dirname, 'src'),
             use: [
-              babelLoader,
+              {
+                loader: 'babel-loader',
+                options: { cacheDirectory: true, cacheCompression: true, compact: true },
+              },
               {
                 loader: 'ts-loader',
               },
             ],
           },
-          // {
-          //   test: /\.(js)$/,
-          //   include: path.resolve(__dirname, 'src'),
-          //   use: [babelLoader],
-          // },
         ],
       },
     ],
@@ -56,6 +49,13 @@ module.exports = {
       analyzerMode: ANALYZE_BUILD ? 'static' : 'disabled',
     }),
   ],
+  externals: {
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+    },
+  },
   devtool: false,
   stats: {
     assets: true,

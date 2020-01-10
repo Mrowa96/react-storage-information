@@ -12,4 +12,16 @@ describe('helpers functions', () => {
 
     expect(value).toEqual('72.32%');
   });
+
+  it('should return value converted to megabytes', () => {
+    const value = toMegabytes(20213044, defaultUnits);
+
+    expect(value).toEqual('19.28MB');
+  });
+
+  it('should return value converted to readable format', () => {
+    const value = toReadable(20213044567, defaultUnits);
+
+    expect(value).toEqual('19.28GB');
+  });
 });
