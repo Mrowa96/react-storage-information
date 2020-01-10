@@ -1,7 +1,8 @@
 .vscode
+coverage
 src
 tests
-.browserlistrc
+.browserslistrc
 .eslintignore
 .eslintrc.js
 .gitattributes
