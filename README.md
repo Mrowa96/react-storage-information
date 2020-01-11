@@ -77,4 +77,4 @@ Currently situation looks like this:
 
 ## Requirements
 
-- react >= 16.12.0
+- react >= 16.8.0

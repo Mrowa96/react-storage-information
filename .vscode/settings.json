@@ -1,9 +1,9 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.formatOnSave": true,
   "editor.rulers": [120],
   "files.eol": "\n",
-  "javascript.validate.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  "javascript.validate.enable": false
 }

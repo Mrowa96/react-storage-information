@@ -31,10 +31,6 @@ module.exports = {
             include: path.resolve(__dirname, 'src'),
             use: [
               {
-                loader: 'babel-loader',
-                options: { cacheDirectory: true, cacheCompression: true, compact: true },
-              },
-              {
                 loader: 'ts-loader',
               },
             ],
@@ -55,16 +51,5 @@ module.exports = {
       commonjs2: 'react',
       amd: 'react',
     },
-  },
-  devtool: false,
-  stats: {
-    assets: true,
-    children: false,
-    entrypoints: false,
-    chunks: false,
-    colors: true,
-    performance: false,
-    usedExports: false,
-    modules: false,
   },
 };

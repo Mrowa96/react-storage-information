@@ -1,10 +1,15 @@
 {
   "name": "react-storage-information",
-  "version": "0.6.1",
-  "description": "Library to retrive information about storage.",
+  "version": "0.6.6",
+  "description": "Library to retrieve information about storage.",
   "author": "Paweł Mrowiec <work@pawel-mrowiec.pl>",
   "main": "dist/react-storage-information.js",
-  "license": "GPLv3",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mrowa96/react-storage-information.git"
+  },
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack",
@@ -20,7 +25,7 @@
     }
   },
   "peerDependencies": {
-    "react": "^16.12.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",

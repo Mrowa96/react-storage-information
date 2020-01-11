@@ -2,6 +2,8 @@
   "compileOnSave": true,
   "compilerOptions": {
     "allowJs": false,
+    "declaration": true,
+    "declarationDir": "./dist",
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
