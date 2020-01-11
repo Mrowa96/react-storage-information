@@ -4,7 +4,7 @@ import useStorageInformation from '../src/useStorageInformation';
 const estimateMock = jest.fn();
 
 describe('useStorageInformation hook', () => {
-  it('shoulde return only ready property on initial call', async () => {
+  it('should return only ready property on initial call', async () => {
     let renderedHook;
 
     // @ts-ignore: Unreachable code error
@@ -20,7 +20,7 @@ describe('useStorageInformation hook', () => {
     expect(renderedHook.result.current.error).toBeUndefined();
   });
 
-  it('shoulde return valid values', async () => {
+  it('should return valid values', async () => {
     // @ts-ignore: Unreachable code error
     navigator.storage = {
       estimate: estimateMock,
@@ -56,7 +56,7 @@ describe('useStorageInformation hook', () => {
     });
   });
 
-  it('shoulde return error if storage manager is not available', () => {
+  it('should return error if storage manager is not available', () => {
     // @ts-ignore: Unreachable code error
     navigator.storage = {
       estimate: undefined,
@@ -66,5 +66,54 @@ describe('useStorageInformation hook', () => {
 
     expect(result.current.ready).toEqual(false);
     expect(result.current.error).toEqual('Not supported.');
+  });
+
+  it('should use custom units', async () => {
+    // @ts-ignore: Unreachable code error
+    navigator.storage = {
+      estimate: estimateMock,
+    };
+    estimateMock.mockResolvedValueOnce({
+      quota: 117052647363,
+      usage: 14133187,
+    });
+
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useStorageInformation({ units: { gigabytes: 'Custom GB', megabytes: 'Custom MB', percentage: 'Custom %' } }),
+    );
+
+    await waitForNextUpdate();
+
+    expect(result.current.ready).toEqual(true);
+    expect(result.current.available).toEqual({
+      megabytes: '111616.63Custom MB',
+      percentage: '99.99Custom %',
+      raw: 117038514176,
+      readable: '111.62Custom GB',
+    });
+    expect(result.current.total).toEqual({
+      megabytes: '111630.10Custom MB',
+      percentage: '10000.00Custom %',
+      raw: 117052647363,
+      readable: '111.63Custom GB',
+    });
+    expect(result.current.used).toEqual({
+      megabytes: '13.48Custom MB',
+      percentage: '0.01Custom %',
+      raw: 14133187,
+      readable: '13.48Custom MB',
+    });
+  });
+
+  it('should use cutom error message if error is returned', () => {
+    // @ts-ignore: Unreachable code error
+    navigator.storage = {
+      estimate: undefined,
+    };
+
+    const { result } = renderHook(() => useStorageInformation({ notSupportedMessage: 'Other message.' }));
+
+    expect(result.current.ready).toEqual(false);
+    expect(result.current.error).toEqual('Other message.');
   });
 });

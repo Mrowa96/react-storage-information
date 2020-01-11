@@ -5,8 +5,8 @@ export type UnitsType = {
 };
 
 export type HookOptionsType = {
-  notSupportedMessage: string;
-  units: UnitsType;
+  notSupportedMessage?: string;
+  units?: UnitsType;
 };
 
 export type HookReturnType = {

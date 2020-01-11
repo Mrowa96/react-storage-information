@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react';
 import { toPercentage, toMegabytes, toReadable } from './helpers';
-import { UnitsType, HookOptionsType, HookReturnType } from './typings';
+import { HookOptionsType, HookReturnType } from './typings';
 
-const defaultUnits: UnitsType = {
-  gigabytes: 'GB',
-  megabytes: 'MB',
-  percentage: '%',
-};
-
-const defaultOptions: HookOptionsType = {
+const defaultOptions = {
   notSupportedMessage: 'Not supported.',
-  units: defaultUnits,
+  units: {
+    gigabytes: 'GB',
+    megabytes: 'MB',
+    percentage: '%',
+  },
 };
 
-export default function useStorageInformation({
-  notSupportedMessage,
-  units,
-}: HookOptionsType = defaultOptions): HookReturnType {
+export default function useStorageInformation(options: HookOptionsType = defaultOptions): HookReturnType {
+  const notSupportedMessage = options.notSupportedMessage ?? defaultOptions.notSupportedMessage;
+  const units = options.units ?? defaultOptions.units;
+
   const [storageSpace, setStorageSpace] = useState<StorageEstimate | null>(null);
   const [error, setError] = useState<string | null>(null);
 
