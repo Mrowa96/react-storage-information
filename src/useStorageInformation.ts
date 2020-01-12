@@ -65,5 +65,6 @@ export default function useStorageInformation(options: HookOptionsType = default
       raw: storageSpace.usage,
       readable: toReadable(storageSpace.usage, units),
     },
+    native: storageSpace,
   };
 }

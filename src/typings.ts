@@ -30,4 +30,5 @@ export type HookReturnType = {
     megabytes: string;
     readable: string;
   };
+  native?: StorageEstimate;
 };

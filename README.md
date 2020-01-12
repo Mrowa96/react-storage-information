@@ -36,7 +36,11 @@ If `StorageManager` exists in `navigator` hook will return object with type `Hoo
         percentage: '0.01%',
         raw: 14133187,
         readable: '13.48MB',
-    }
+    },
+    native: {
+      quota: 117052647363,
+      usage: 14133187,
+    },
 }
 ```
 

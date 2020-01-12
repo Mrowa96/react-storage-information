@@ -54,6 +54,10 @@ describe('useStorageInformation hook', () => {
       raw: 14133187,
       readable: '13.48MB',
     });
+    expect(result.current.native).toEqual({
+      quota: 117052647363,
+      usage: 14133187,
+    });
   });
 
   it('should return error if storage manager is not available', () => {
@@ -102,6 +106,10 @@ describe('useStorageInformation hook', () => {
       percentage: '0.01Custom %',
       raw: 14133187,
       readable: '13.48Custom MB',
+    });
+    expect(result.current.native).toEqual({
+      quota: 117052647363,
+      usage: 14133187,
     });
   });
 
