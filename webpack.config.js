@@ -10,8 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'react-storage-information.js',
-    library: 'react-storage-information',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -51,5 +50,15 @@ module.exports = {
       commonjs2: 'react',
       amd: 'react',
     },
+  },
+  stats: {
+    assets: true,
+    children: false,
+    entrypoints: false,
+    chunks: false,
+    colors: true,
+    performance: false,
+    usedExports: false,
+    modules: false,
   },
 };

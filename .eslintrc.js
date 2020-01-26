@@ -3,12 +3,13 @@ module.exports = {
   plugins: ['prettier'],
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 11,
+    ecmaVersion: 2020,
   },
   rules: {
     'import/no-extraneous-dependencies': 'off',
   },
   env: {
     browser: false,
+    node: true,
   },
 };

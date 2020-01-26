@@ -12,3 +12,8 @@
 
 - Ready to release
 - Add `native` property to object returned from hook
+
+## 1.1.0
+
+- Cleanup
+- Change umd build to commonjs2 to save few bytes
