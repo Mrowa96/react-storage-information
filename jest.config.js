@@ -3,10 +3,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'json'],
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['<rootDir>/tests/**/*.ts'],
-  transform: {
-    '^.+\\.(js)$': '<rootDir>/node_modules/babel-jest',
-  },
+  testMatch: ['<rootDir>/src/**/*.test.ts'],
   globals: {
     'ts-jest': {
       diagnostics: false,

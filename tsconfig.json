@@ -11,11 +11,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist/",
-    "plugins": [{ "name": "typescript-tslint-plugin" }],
     "sourceMap": true,
     "strict": true,
-    "target": "es6",
-    "resolveJsonModule": true
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "experimentalDecorators": false
   },
-  "include": ["./src/**/*"]
+  "include": ["./**/*"],
+  "exclude": ["./node_modules", "./dist", "./coverage"]
 }

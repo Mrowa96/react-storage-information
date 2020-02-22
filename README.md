@@ -81,4 +81,4 @@ Currently situation looks like this:
 
 ## Requirements
 
-- react >= 16.8.0
+- react >= 16.9.0

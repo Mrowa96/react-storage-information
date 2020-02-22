@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'react-storage-information.js',
+    filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
   resolve: {
@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.(ts)$/,
         enforce: 'pre',
-        loader: 'tslint-loader',
+        loader: 'eslint-loader',
         include: path.resolve(__dirname, 'src'),
       },
       {
@@ -51,6 +51,7 @@ module.exports = {
       amd: 'react',
     },
   },
+  devtool: 'source-map',
   stats: {
     assets: true,
     children: false,

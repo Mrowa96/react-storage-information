@@ -1,4 +1,4 @@
-import { toPercentage, toMegabytes, toReadable } from '../src/helpers';
+import { toPercentage, toMegabytes, toReadable } from '../helpers';
 
 const defaultUnits = {
   gigabytes: 'GB',

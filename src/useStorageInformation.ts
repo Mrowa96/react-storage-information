@@ -18,9 +18,10 @@ export default function useStorageInformation(options: HookOptionsType = default
   const [storageSpace, setStorageSpace] = useState<StorageEstimate | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(function effect(): void {
-    (async function calculateStorageSpace(): Promise<void> {
+  useEffect((): void => {
+    (async (): Promise<void> => {
       try {
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         if (!navigator?.storage?.estimate) {
           throw new Error(notSupportedMessage);
         }

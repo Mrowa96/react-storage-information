@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import useStorageInformation from '../src/useStorageInformation';
+import useStorageInformation from '../useStorageInformation';
 
 const estimateMock = jest.fn();
 
