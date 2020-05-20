@@ -68,15 +68,19 @@ Currently situation looks like this:
 
 - Firefox >= 57
 - Firefox Android - **not supported**
+- Firefox Preview >= 2
 - Chrome >= 48
 - Chrome Android >= 79
 - Chrome iOS >= **not supported**
 - Opera >= 64
 - Opera Android >= 48
+- Opera >= 68
+- Opera Android >= 46
 - Safari - **not supported**
 - Safari iOS - **not supported**
 - IE - **not supported**
 - Edge - **not supported**
+- Edge >= 79
 - Samsung Browser >= 5
 
 ## Requirements

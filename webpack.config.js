@@ -51,7 +51,7 @@ module.exports = {
       amd: 'react',
     },
   },
-  devtool: 'source-map',
+  devtool: false,
   stats: {
     assets: true,
     children: false,

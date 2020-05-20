@@ -1,51 +1,60 @@
 {
   "name": "react-storage-information",
   "version": "1.2.0",
-  "description": "Library to retrieve information about storage.",
-  "author": "Paweł Mrowiec <work@pawel-mrowiec.pl>",
+  "description": "Library to retrieve information about available storage.",
+  "author": "Paweł Mrowiec <work@pawel-mrowiec.pl> (https://pawel-mrowiec.pl/)",
+  "homepage": "https://github.com/Mrowa96/react-storage-information#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Mrowa96/react-storage-information.git"
   },
+  "bugs": {
+    "url": "https://github.com/Mrowa96/react-storage-information/issues"
+  },
   "license": "MIT",
   "scripts": {
     "build": "webpack",
     "start": "webpack --watch",
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --env=jsdom --watch",
-    "test:coverage": "jest --env=jsdom --coverage",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "eslint --ext .js --ext .ts .",
     "prettier": "npx prettier -c \"*.{ts,js,json,md,yml}\"",
     "analyze-build": "cross-env ANALYZE_BUILD=1 webpack"
   },
+  "files": [
+    "dist/index.js",
+    "dist/*.d.ts"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint && npm run prettier && npm run test"
     }
   },
   "devDependencies": {
-    "@mrowa96/eslint-config-react": "^1.2.0",
-    "@testing-library/jest-dom": "^5.1.1",
-    "@testing-library/react": "^9.4.1",
+    "@mrowa96/eslint-config-react": "^1.3.0",
+    "@testing-library/jest-dom": "^5.7.0",
+    "@testing-library/react": "^10.0.4",
     "@testing-library/react-hooks": "^3.2.1",
-    "@types/jest": "^25.1.3",
-    "@types/react": "^16.9.22",
+    "@types/jest": "^25.2.3",
+    "@types/react": "^16.9.35",
     "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^7.0.0",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
-    "husky": "^4.2.3",
-    "jest": "^25.1.0",
-    "prettier": "1.19.1",
-    "react": "^16.12.0",
-    "react-test-renderer": "^16.12.0",
-    "ts-jest": "^25.2.1",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.8.2",
-    "webpack": "^4.41.6",
-    "webpack-bundle-analyzer": "^3.6.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "prettier": "2.0.5",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.0.0",
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11"
   },
   "peerDependencies": {
