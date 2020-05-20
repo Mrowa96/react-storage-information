@@ -1,6 +1,6 @@
 {
   "name": "react-storage-information",
-  "version": "1.2.0",
+  "version": "1.2.1-0",
   "description": "Library to retrieve information about available storage.",
   "author": "Paweł Mrowiec <work@pawel-mrowiec.pl> (https://pawel-mrowiec.pl/)",
   "homepage": "https://github.com/Mrowa96/react-storage-information#readme",
